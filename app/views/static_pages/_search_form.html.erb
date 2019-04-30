@@ -1,4 +1,4 @@
 <%= form_tag search_path, method: :get, class: "form-inline mb-3" do %>
-  <%= search_field_tag "q_product", params[:q_product], class: "form-control mr-sm-2 my-2 my-sm-0 ", placeholder: "在庫情報を確認", style: "width:70%" %>
+  <%= search_field_tag "q_product", params[:q_product], class: "form-control mr-sm-2 my-2 my-sm-0 ", placeholder: "在庫情報を確認(例:10373589)", style: "width:70%" %>
   <%= button_tag "search!", class:"btn btn-outline-info my-2 my-sm-0" %>
 <% end %>
