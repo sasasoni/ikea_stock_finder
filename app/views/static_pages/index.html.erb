@@ -1,4 +1,4 @@
-<div class="row welcome text-center padding">
+<div class="row welcome text-center padding py-3">
   <div class="col-12">
     <h1 class="display-5">IKEAの在庫わかる君 Ver 1.0</h1>
   </div>
@@ -8,13 +8,14 @@
 <div class="row">
   <div class="col-12 text-center">
     <p>IKEAの商品ページのURLの末尾らへんにある数字を入力して在庫を確認することができます。</p>
+    <p><%= link_to "Homeに戻る", root_path %></p>
 
     <%= render 'search_form' %>
 
     <h2 class="display-5"><%= link_to @product_code, ikea_product_url(@product_code), target: "_blank" %>の在庫情報</h2>
 
     <table class="table">
-      <thead>
+      <thead></thead>
         <tr>
           <th scope="col">店名</th>
           <th scope="col">店名コード</th>
