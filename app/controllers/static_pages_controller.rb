@@ -3,8 +3,8 @@ class StaticPagesController < ApplicationController
 
   def index
     # サメの商品コード
-    @product_code = "IKEAのサメちゃん"
-    @stock_data = helpers.get_stocks(10373589)
+    @product_code = 10373589
+    @stock_data = helpers.get_stocks(@product_code)
   end
 
   def search

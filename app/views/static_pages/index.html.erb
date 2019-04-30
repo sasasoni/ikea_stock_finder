@@ -12,7 +12,12 @@
 
     <%= render 'search_form' %>
 
-    <h2 class="display-5"><%= link_to @product_code, ikea_product_url(@product_code), target: "_blank" %>の在庫情報</h2>
+    <% if @product_code == "10373589" %>
+      <h2 class="display-5"><%= link_to "IKEAのサメちゃん", ikea_product_url(@product_code), target: "_blank" %>の在庫情報</h2>
+    <% else %>
+      <h2 class="display-5"><%= link_to @product_code, ikea_product_url(@product_code), target: "_blank" %>の在庫情報</h2>
+    <% end %>
+    
 
     <table class="table">
       <thead></thead>
