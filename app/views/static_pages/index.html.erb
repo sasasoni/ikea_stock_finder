@@ -23,7 +23,6 @@
       <thead></thead>
         <tr>
           <th scope="col">店名</th>
-          <th scope="col">店名コード</th>
           <th scope="col">在庫数</th>
           <th scope="col">次回入荷日</th>
         </tr>
@@ -32,7 +31,6 @@
         <% @stock_data.each do |data| %>
           <tr>
             <th scope="row"><%= data[:store_name] %>店</th>
-            <td><%= data[:store_code] %></td>
             <td><%= data[:stock_quantity] %></td>
             <td><%= data[:restore_date] %></td>
           </tr>

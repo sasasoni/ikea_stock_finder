@@ -33,7 +33,7 @@ module ApplicationHelper
         # DateTime.parse("2019-02-04").strftime("%Y年%m月%d日")
       end
 
-      store_data = {store_code: store_code, store_name: store_name, stock_quantity: @stock_quantity, restore_date: @restore_date}
+      store_data = {store_name: store_name, stock_quantity: @stock_quantity, restore_date: @restore_date}
       stock_data << store_data
     end
     stock_data
