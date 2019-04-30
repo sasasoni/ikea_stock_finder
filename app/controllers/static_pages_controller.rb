@@ -10,7 +10,13 @@ class StaticPagesController < ApplicationController
   def search
     @product_code = params[:q_product]
     @stock_data = helpers.get_stocks(@product_code)
-    render 'index'
+    # debugger
+    if @stock_data.nil?
+      flash[:danger] = "商品が見つかりませんでした。。。"
+      redirect_to root_url
+    else
+      render 'index'
+    end
   end
 
   private

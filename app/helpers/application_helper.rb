@@ -11,8 +11,12 @@ module ApplicationHelper
     store_name_list = { "447" => "船橋", "448" => "港北", "887" => "新三郷", "486" => "神戸", "392" => "仙台", "509" => "長久手", "496" => "鶴浜", "189" => "福岡新宮", "359" => "立川" }
     stock_data = []
 
-    xml = Nokogiri::XML(open(url).read)
-    store_nodes = xml.xpath('//availability/localStore')
+    begin
+      xml = Nokogiri::XML(open(url).read)
+    rescue
+      return nil
+    end
+      store_nodes = xml.xpath('//availability/localStore')
 
     store_nodes.each do |store|
       store_code = store.attribute('buCode').text
