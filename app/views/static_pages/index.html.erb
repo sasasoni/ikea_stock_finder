@@ -1,0 +1,37 @@
+<div class="row welcome text-center padding">
+  <div class="col-12">
+    <h1 class="display-5">IKEAの在庫わかる君 Ver 1.0</h1>
+  </div>
+  <hr>
+</div>
+
+<div class="row">
+  <div class="col-12 text-center">
+    <p>IKEAの商品ページのURLの末尾らへんにある数字を入力して在庫を確認することができます。</p>
+
+    <%= render 'search_form' %>
+
+    <h2 class="display-5"><%= link_to @product_code, ikea_product_url(@product_code), target: "_blank" %>の在庫情報</h2>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">店名</th>
+          <th scope="col">店名コード</th>
+          <th scope="col">在庫数</th>
+          <th scope="col">次回入荷日</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @stock_data.each do |data| %>
+          <tr>
+            <th scope="row"><%= data[:store_name] %>店</th>
+            <td><%= data[:store_code] %></td>
+            <td><%= data[:stock_quantity] %></td>
+            <td><%= data[:restore_date] %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
