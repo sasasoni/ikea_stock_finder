@@ -1,7 +1,7 @@
 class StaticPagesController < ApplicationController
   before_action :form_validate, only: :search
 
-  def index
+  def home
     # サメの商品コード
     @product_code = "10373589"
     @stock_data = helpers.get_stocks(@product_code)
@@ -15,7 +15,7 @@ class StaticPagesController < ApplicationController
       flash[:danger] = "商品が見つかりませんでした。。。"
       redirect_to root_url
     else
-      render 'index'
+      render 'home'
     end
   end
 
