@@ -5,6 +5,9 @@ class StaticPagesController < ApplicationController
     # サメの商品コード
     @product_code = "10373589"
     @stock_data = helpers.get_stocks(@product_code)
+    if @stock_data.nil?
+      render 'error'
+    end
   end
 
   def search
