@@ -1,24 +1,11 @@
-<div class="row welcome text-center padding py-3">
-  <div class="col-12">
-    <h1 class="display-5">IKEAの在庫わかる君 Ver 1.0</h1>
-  </div>
-  <hr>
-</div>
-
 <div class="row">
   <div class="col-12 text-center">
-    <p class="text-left">IKEAの商品ページのURLの末尾らへんにある数字(または商品番号)8桁を入力して在庫を確認することができます。</p>
-    <p><%= link_to "Homeに戻る", root_path %></p>
-
-    <%= render 'search_form' %>
-
     <% if @product_code == "10373589" %>
       <h2 class="display-5"><%= link_to "IKEAのサメちゃん", ikea_product_url(@product_code), target: "_blank" %>の在庫情報</h2>
     <% else %>
       <h2 class="display-5"><%= link_to @product_code, ikea_product_url(@product_code), target: "_blank" %>の在庫情報</h2>
     <% end %>
     
-
     <table class="table">
       <thead></thead>
         <tr>
