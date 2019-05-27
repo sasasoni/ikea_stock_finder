@@ -1,5 +1,5 @@
 <div class="row alert-danger mb-3">
   <h1 class="display-4 text-danger">Error!</h1>
-  <p>現在、一時的に<%= link_to @product_code, ikea_product_url(@product_code), target: "_blank" %>の在庫確認機能が使えません。時間を置いて再度ご訪問ください。。。</p>
+  <p>現在、一時的に<%= link_to ikea_product_name(@product_code), ikea_product_url(@product_code), target: "_blank" %>の在庫確認機能が使えません。時間を置いて再度ご訪問ください。。。</p>
   <p>今後、定期的にデータベースにキャッシュとして在庫データを保存することを検討中です。。。</p>
 </div>

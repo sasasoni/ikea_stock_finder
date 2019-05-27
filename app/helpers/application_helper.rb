@@ -6,6 +6,10 @@ module ApplicationHelper
     "https://www.ikea.com/jp/ja/catalog/products/#{product_code}/"
   end
 
+  def ikea_product_name(product_code)
+    product_code == "10373589" ? "IKEAのサメちゃん" : product_code
+  end
+
   def get_stocks(product_code)
     url = "https://www.ikea.com/jp/ja/iows/catalog/availability/#{product_code}"
     store_name_list = { "447" => "Tokyo-Bay", "448" => "港北", "887" => "新三郷", "486" => "神戸", "392" => "仙台", "509" => "長久手", "496" => "鶴浜", "189" => "福岡新宮", "359" => "立川" }
