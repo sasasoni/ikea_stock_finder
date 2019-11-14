@@ -26,8 +26,8 @@ class StaticPagesController < ApplicationController
 
     def form_validate
       # debugger
-      unless params[:q_product] =~ /\A\d+\z/
-        flash[:danger] = "不正な値です！半角数字で入力してね"
+      unless params[:q_product] =~ /\AS?\d+\z/
+        flash[:danger] = "不正な値です！半角英数字で入力してね"
         redirect_to root_url
       end
     end
